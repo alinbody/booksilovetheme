@@ -1,0 +1,30 @@
+/*
+GLOBAL STYLES
+*/
+
+body
+	{
+	font-size: 16px;
+	font-family: 'Helvetica', Arial, sans-serif;
+	}
+
+.header .title {
+	display: none;
+}
+
+ul.menu {
+	text-align: center;
+	height: 40px;
+	margin-top: 15px;
+}
+
+ul.menu li {
+	display: inline;
+}
+
+.masthead {
+	background: transparent url('../img/background.jpg') no-repeat top center;
+	height: 260px;
+	padding-top: 20px;
+	text-align: center;
+}
