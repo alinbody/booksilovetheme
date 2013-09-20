@@ -2,14 +2,72 @@
 GLOBAL STYLES
 */
 
-body
-	{
+body {
 	font-size: 16px;
-	font-family: 'Helvetica', Arial, sans-serif;
-	}
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 200;
+	color: #AAAAAA;
+}
+
+h1 {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 100;
+	font-size: 3em;
+	line-height: .6em;
+	margin: 0 0 30px 0;
+	color: #888888;
+}
+
+p {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 200;
+	margin: 0 0 30px 0;
+	line-height: 1.3em;
+	font-size: 1.2em;
+}
+
+a {
+	text-decoration: none;
+	color: #812D81;
+}
+
+li a.active {
+	font-weight: 600;
+	color: #812D81;
+}
+
+ul {
+	padding-left: 20px;
+}
+
+li {
+	font-family: 'Helvetica Neue', Arial, sans-serif;
+	font-weight: 200;
+	margin: 0 0 10px 0;
+	line-height: 1.3em;
+	font-size: 1.2em;
+}
+
+.inner-div {
+	width: 960px;
+	margin: 0 auto;
+}
 
 .header .title {
 	display: none;
+}
+
+ul.menu {
+	padding: 0;
+}
+
+ul.menu li {
+	margin: 0 15px;
+}
+
+.masthead-logo {
+	width: 432px;
+	margin: 60px 0;
 }
 
 ul.menu {
@@ -24,7 +82,51 @@ ul.menu li {
 
 .masthead {
 	background: transparent url('../img/background.jpg') no-repeat top center;
-	height: 260px;
-	padding-top: 20px;
 	text-align: center;
+}
+
+/* Homepage */
+
+.hero-image {
+	width: 50%;
+	float: right;
+	text-align: center;
+}
+
+.hero-image img {
+	width: 100%;
+	position: relative;
+	top: -40px;
+}
+
+.feature-text {
+	width: 50%;
+	float: right;
+	padding-top: 60px;
+}
+
+.signup-button {
+	margin-bottom: 40px;
+}
+
+/* Utility classes */
+
+.clear-both {
+	clear: both;
+}
+
+@media screen and (max-width:640px) {
+
+	.inner-div {
+		width: 95%;
+	}
+
+	.hero-image, .feature-text {
+		float: none;
+	}
+
+	.hero-image img {
+		top: 0;
+	}
+
 }

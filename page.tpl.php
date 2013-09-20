@@ -12,30 +12,30 @@
 
 <div class="page">
 
-  <?php if($page['header']) { ?>
-  <div class="header">
-    <?php print render($page['header']); ?>
-  </div> <!-- /header -->
-  <?php } ?>
-  
-
-  <div role="main" id="main-content">
-
-    <?php if($page['highlighted'] OR $messages){ ?>
-      <div class="drupal-messages">
-      <?php print render($page['highlighted']); ?>
-      <?php print $messages; ?>
-      </div>
+    <?php if($page['header']) { ?>
+    <div class="header">
+      <?php print render($page['header']); ?>
+    </div> <!-- /header -->
     <?php } ?>
+    
+
+    <div role="main" id="main-content">
+
+      <?php if($page['highlighted'] OR $messages){ ?>
+        <div class="drupal-messages">
+        <?php print render($page['highlighted']); ?>
+        <?php print $messages; ?>
+        </div>
+      <?php } ?>
 
 
-    <?php print render($page['content_pre']); ?>
+      <?php print render($page['content_pre']); ?>
 
-    <?php print render($page['content']); ?>
+      <?php print render($page['content']); ?>
 
-    <?php print render($page['content_post']); ?>
+      <?php print render($page['content_post']); ?>
 
-  </div><!-- /main-->
+    </div><!-- /main-->
 </div><!-- /page-->
 
 <footer role="contentinfo">
