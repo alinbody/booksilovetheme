@@ -28,6 +28,7 @@
         </div>
       <?php } ?>
 
+      <h1 class="page-title"><?php print $title; ?></h1>
 
       <?php print render($page['content_pre']); ?>
 
