@@ -3,6 +3,8 @@
  * Author: Jessica Chan (http://www.jessicachanstudios.com/)
  */
 
+@import url('typography.css');
+
 /*
 GLOBAL STYLES
 */
@@ -19,7 +21,25 @@ GLOBAL STYLES
 		font-family: 'Helvetica Neue', Arial, sans-serif;
 		font-weight: 100;
 		font-size: 3em;
-		line-height: 1.2em;
+		line-height:1.2em;
+		margin: 0 0 30px 0;
+		color: #888888;
+	}
+
+	h2 {
+		font-family: 'Helvetica Neue', Arial, sans-serif;
+		font-weight: 100;
+		font-size: 2em;
+		line-height: 1em;
+		margin: 0 0 30px 0;
+		color: #888888;
+	}
+
+	h3 {
+		font-family: 'Helvetica Neue', Arial, sans-serif;
+		font-weight: 100;
+		font-size: 1.7em;
+		line-height: 1em;
 		margin: 0 0 30px 0;
 		color: #888888;
 	}
@@ -83,6 +103,10 @@ GLOBAL STYLES
 		margin: 0 15px;
 	}
 
+	ul.menu li a {
+		color: #812D81 !important;
+	}
+
 	.top-divider {
 		position: absolute;
 		background: transparent url('../img/divider-down.png') no-repeat center top;
@@ -109,6 +133,10 @@ GLOBAL STYLES
 	.masthead {
 		background: transparent url('../img/background.jpg') no-repeat top center;
 		text-align: center;
+	}
+
+	.node-type-article .news-menu-item, .front .the-app-menu-item {
+		font-weight: 600;
 	}
 
 /* Homepage Feature Section 1 */
@@ -302,6 +330,22 @@ GLOBAL STYLES
 		margin-bottom: 40px;
 	}
 
+	.node-article .field-type-text-with-summary {
+		width: 600px;
+		float: left;
+	}
+
+	.article-right-column {
+		width: 300px;
+		float: left;
+		padding-left: 60px;
+	}
+
+	.back-to {
+		padding-left: 20px;
+		background: transparent url('../img/left-arrow.png') no-repeat left 3px;
+	}
+
 /* Comment formatting */
 
 	.comment-wrapper h2:first-child {
@@ -316,6 +360,34 @@ GLOBAL STYLES
 		display: none;
 	}
 
+	article.comment {
+		margin: 20px 0;
+	}
+
+	article.comment a.permalink {
+		display: none;
+	}
+
+	article.comment span.username {
+		font-weight: 400;
+	}
+
+	#comment-form label {
+		margin: 10px 0 20px 0;
+	}
+
+	.required {
+		color: #AAAAAA;
+	}
+
+	.required:after {
+		content: "*";
+	}
+
+	.comments-header {
+		clear: both;
+	}
+
 /* Footer classas */
 	.bil-footer {
 		text-align: center;
@@ -327,6 +399,42 @@ GLOBAL STYLES
 
 	.bil-footer .logo {
 		margin-bottom: 20px;
+	}
+
+/* Submit Form */
+
+	#webform-client-form-15, .webform-confirmation {
+		width: 400px;
+		margin: 0 auto;
+		padding: 20px;
+	}
+
+	.webform-confirmation {
+		padding-top: 80px;
+	}
+
+	#webform-client-form-15 #edit-actions {
+		text-align: right;
+		padding: 0 20px;
+	}
+
+	#webform-client-form-15 #edit-submit {
+		width: 179px;
+		height: 37px;
+		background: transparent url('../img/signup-button.png') no-repeat center top;
+		border: 0;
+	}
+
+	#webform-client-form-15 #edit-submitted-email {
+		background-color: #ffffff;
+		-webkit-box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, .2);
+		box-shadow: inset 2px 2px 3px 0px rgba(0, 0, 0, .2);
+		border: 1px #c6c6c6 solid;
+		width: 360px;
+		height: 40px;
+		padding-left: 10px;
+		font-size: 1.4em;
+		color: #333333;
 	}
 
 /* Utility classes */
