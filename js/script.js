@@ -82,8 +82,8 @@
 
 		});
 
-		addEvent(window, 'scroll', function() {
-			// Define wWidth and wHeight on scroll
+		addEvent(window, 'resize', function() {
+			// Define wWidth and wHeight on resize
 			wWidth = $(window).width();
 			wHeight = $(window).height();
 		});
@@ -113,9 +113,38 @@
 
 
 	booksILove.signUpPopup = function() {
-		// Prepend overlay div
-		$('body').prepend('<div style="-ms-filter:\'progid:DXImageTransform.Microsoft.Alpha(Opacity=25)\';filter: alpha(opacity=25);-khtml-opacity: 0.25;-moz-opacity: 0.25;
-opacity: 0.25;width:' + wWidth + 'px;height:' + wHeight + 'px;background-color: #ffffff;" class="overlay"></div>');
+		// Prepend overlay div and email form and close box
+		$('body').prepend('<div style="-ms-filter:\'progid:DXImageTransform.Microsoft.Alpha(Opacity=80)\';filter: alpha(opacity=80);-khtml-opacity: 0.80;-moz-opacity: 0.80;opacity: 0.80;width:' + wWidth + 'px;height:' + wHeight + 'px;background-color: #ffffff;position:fixed;z-index:200;display: none;" class="overlay"></div><iframe src="http://booksilove.com/stage/content/sign-form" frameborder="0" style="padding:20px;width:450px;height:345px;overflow:hidden;border: 1px solid #999999;z-index: 201;display:none;position: fixed; background-color:#ffffff;left:' + (wWidth/2-225) + 'px;top:' + (wHeight/2-150) + 'px;" class="signup-form"></iframe><div class="closebox" style="position: fixed;top:' + (wHeight/2-140) + 'px;left:' + (wWidth/2+245) + 'px;z-index:201;cursor:pointer;">X</div>');
+
+		// Fade in overlay div and email form
+		$('.overlay').fadeIn('fast');
+		$('.signup-form').fadeIn('slow');
+
+		// Attach click handler to close these things
+		$('.closebox, .overlay').click( function() {
+			$('.overlay, .signup-form, .closebox').fadeOut('slow').remove();
+		});
+
+		
+		addEvent(window, 'resize', function() {
+			// Update width and height of overlay on resize
+			$('.overlay').css({
+				width: wWidth + 'px',
+				height: wHeight + 'px'
+			});
+
+			// Update top and left position of form on resize
+			$('.signup-form').css({
+				top: (wHeight/2-150) + 'px',
+				left: (wWidth/2-225) + 'px'
+			});
+
+			$('.closebox').css({
+				top: (wHeight/2-140) + 'px',
+				left: (wWidth/2+245) + 'px'
+			});
+
+		});
 	};
 
 	booksILove.initialize();
