@@ -165,6 +165,7 @@ GLOBAL STYLES
 
 	.signup-button {
 		margin-bottom: 40px;
+		cursor: pointer;
 	}
 
 /* Homepage Feature Section 3 (About Us) */

@@ -16,6 +16,9 @@
 		console.log = function() {};
 	}
 
+	// Initialize window width and height to keep track of
+	var wWidth = null, wHeight = null;
+
 	booksILove.initialize = function() {
 		addEvent(window, 'load', function() {
 			
@@ -73,7 +76,23 @@
 				$(this).css('font-weight','600');
 			});
 
+			// Define wWidth and wHeight
+			wWidth = $(window).width();
+			wHeight = $(window).height();
+
 		});
+
+		addEvent(window, 'scroll', function() {
+			// Define wWidth and wHeight on scroll
+			wWidth = $(window).width();
+			wHeight = $(window).height();
+		});
+
+		// When signup button is clicked, pop up overlay form.
+		$('.signup-button').click( function() {
+			booksILove.signUpPopup();
+		});
+
 	};
 
 	booksILove.autoScroll = function(sectionName) {
@@ -90,6 +109,14 @@
 					$('nav li a.' + sectionName + '-menu-item').css('font-weight','600');
 				}
 		};
+
+
+
+	booksILove.signUpPopup = function() {
+		// Prepend overlay div
+		$('body').prepend('<div style="-ms-filter:\'progid:DXImageTransform.Microsoft.Alpha(Opacity=25)\';filter: alpha(opacity=25);-khtml-opacity: 0.25;-moz-opacity: 0.25;
+opacity: 0.25;width:' + wWidth + 'px;height:' + wHeight + 'px;background-color: #ffffff;" class="overlay"></div>');
+	};
 
 	booksILove.initialize();
 
