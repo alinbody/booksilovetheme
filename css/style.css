@@ -95,6 +95,10 @@ GLOBAL STYLES
 
 	}
 
+	.mobile-menu {
+		display: none;
+	}
+
 	ul.menu {
 		padding: 0;
 	}
@@ -210,6 +214,7 @@ GLOBAL STYLES
 	.views-field-field-teaser-image {
 		float: left;
 		margin-right: 40px;
+		min-height: 200px;
 	}
 
 	.views-field-title {
@@ -255,6 +260,7 @@ GLOBAL STYLES
 		margin: 0 auto;
 		text-align: left;
 		min-height: 200px;
+		clear: both;
 	}
 
 
@@ -411,7 +417,7 @@ GLOBAL STYLES
 	}
 
 	.webform-confirmation {
-		padding-top: 100px;
+		padding-top: 80px;
 	}
 
 	#webform-client-form-15 #edit-actions {
@@ -438,6 +444,13 @@ GLOBAL STYLES
 		color: #333333;
 	}
 
+	/* Basic Page */
+
+	article.node-page {
+		width: 960px;
+		margin: 30px auto;
+	}
+
 /* Utility classes */
 
 	.clear-both {
@@ -454,18 +467,217 @@ GLOBAL STYLES
 
 /* Responsive classes */
 
-	@media screen and (max-width:640px) {
+	@media screen and (max-width:1024px) {
+
+		body {
+			font-size: 14px;
+		}
 
 		.inner-div {
+			width: 90%;
+		}
+
+		.homepage-feature-1 .feature-text {
+			padding: 60px 0;
+		}
+
+		.homepage-feature-3 .hero-image img, .homepage-feature-1 .hero-image img {
+			top: 20px;
+		}
+
+		.news-view-rows {
+			width: 90%;
+		}
+
+		article.node-page {
 			width: 95%;
 		}
 
-		.hero-image, .feature-text {
+	}
+
+	@media screen and (max-width: 768px) {
+
+		.homepage-feature-1 .feature-text {
+			width: 70%;
+		}
+
+		.homepage-feature-1 .hero-image {
+			width: 52%;
+			position: absolute;
+			left: -160px;
+		}
+
+		.homepage-feature-3 .feature-text {
+			width: 60%;
+		}
+
+		.homepage-feature-3	.hero-image {
+			position: absolute;
+			right: -110px;
+			width: 45%;
+		}
+
+		.news-view-rows {
+			width: 90%;
+			margin: 0 auto;
+			padding: 20px 0;
+		}
+
+	}
+
+	@media screen and (max-width:320px) {
+		
+		body {
+			padding: 0;
+			text-align: center;
+		}
+
+		h1 {
+			font-size: 2.4em;
+		}
+
+		h2 {
+			font-size: 2em;
+		}
+
+		h3 {
+			font-size: 1.7em;
+		}
+
+		.masthead {
+			padding-top: 20px;
+		}
+
+		.masthead-logo {
+			width: 85%;
+			margin-bottom: 40px;
+		}
+
+		.mobile-menu {
+			width: 100%;
+			height: 55px;
+			position: fixed;
+			background-color: #ffffff;
+			display: block;
+		}
+
+		.mobile-menu img {
+			height: 35px;
+			padding-top: 9px;
+			width: auto;
+			cursor: pointer;
+			position: fixed;
+			right: 5px;
+		}
+
+		.header nav {
+			top: 55px;
+		}
+
+		ul.menu {
+			padding: 30px 0 20px 0;
+			height: auto;
+			margin-top: 0;
+			background: #eeeeee url('../img/divider-mobile.png') no-repeat top center;
+			display: none;
+		}
+
+		ul.menu li {
+			display: block;
+		    font-size: 1.8em;
+		    margin-bottom: 10px;
+		}
+
+		/* FEATURES */
+		.homepage-feature-1 .feature-text, .homepage-feature-3 .feature-text {
+			margin: 0 auto;
+			width: 95%;
+			padding: 30px 0;
 			float: none;
 		}
 
-		.hero-image img {
+		.homepage-feature-1 .hero-image, .homepage-feature-3 .hero-image {
+			left: 0;
+			position: relative;
+			width: 95%;
+			margin: 0 auto 20px auto;
+			float: none;
+			text-align: center;
+		}
+
+		.homepage-feature-1 .hero-image img, .homepage-feature-3 .hero-image img {
 			top: 0;
+		}
+
+
+		/* NEWS */
+
+		.views-field-field-teaser-image {
+			float: none;
+			margin: 0;
+			text-align: center;
+			clear: both;
+			min-height: 0;
+		}
+
+		.views-field-field-teaser-image img {
+			margin: 20px 0;
+		}
+
+		.news-view-rows {
+			text-align: center;
+			margin: 30px auto;
+		}
+
+		.views-field-created {
+			float: none;
+			clear: both;
+			padding-top: 10px;
+		}
+
+		.views-field-view-node {
+			margin-left: 55px;
+		}
+
+		.views-field-comment-count {
+			border: 0;
+		}
+
+		/* Article page */
+
+		.node-article {
+			width: 90%;
+			padding: 30px 0;
+			text-align: left;
+		}
+
+		.node-article .field-type-text-with-summary {
+			width: 100%;
+			float: none;
+		}
+
+		.back-to {
+			text-align: left;
+		}
+
+		.article-right-column {
+		    float: none;
+		    margin: 30px 0;
+		    padding-left: 0;
+		    width: 100%;
+}
+
+		/* News index page */
+
+		.page-news .view-header h1 {
+			font-size: 3em;
+			padding: 0;
+		}
+
+		/* FOOTER */
+
+		.bil-footer .logo {
+			width: 85%;
 		}
 
 	}

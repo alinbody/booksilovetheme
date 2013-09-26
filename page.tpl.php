@@ -14,6 +14,9 @@
 
     <?php if($page['header']) { ?>
     <div class="header">
+      <div class="mobile-menu">
+        <img class="menu-button" src="<?php print $base_path ?>sites/all/themes/booksilovetheme/img/mobilemenu.jpg">
+      </div>
       <?php print render($page['header']); ?>
     </div> <!-- /header -->
     <?php } ?>

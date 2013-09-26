@@ -77,13 +77,16 @@
 			});
 
 			// Define wWidth and wHeight
-			wWidth = $(window).width();
-			wHeight = $(window).height();
+			function getWindowAttrib(){
+				wWidth = $(window).width();
+				wHeight = $(window).height();
+			}
+			getWindowAttrib();				
 
 		});
 
-		addEvent(window, 'resize', function() {
-			// Define wWidth and wHeight on resize
+		addEvent(window, 'scroll', function() {
+			// Define wWidth and wHeight on scroll
 			wWidth = $(window).width();
 			wHeight = $(window).height();
 		});
@@ -91,6 +94,18 @@
 		// When signup button is clicked, pop up overlay form.
 		$('.signup-button').click( function() {
 			booksILove.signUpPopup();
+		});
+
+		// When menu button is clicked, slide down/up mobile menu
+		// Then, add class "mobile-menu" to UL to distinguish it from desktop site
+		$('.mobile-menu img').click( function() {
+			$('ul.menu').slideToggle('slow').addClass('mobile-menu');
+		});
+
+		// When menu item is tapped, hide menu
+		// Then, remove "mobile-menu" class
+		$('ul.menu li a').click( function() {
+			$('ul.mobile-menu').hide().removeClass('mobile-menu');
 		});
 
 	};
@@ -128,6 +143,7 @@
 		
 		addEvent(window, 'resize', function() {
 			// Update width and height of overlay on resize
+			getWindowAttrib();
 			$('.overlay').css({
 				width: wWidth + 'px',
 				height: wHeight + 'px'
@@ -135,13 +151,13 @@
 
 			// Update top and left position of form on resize
 			$('.signup-form').css({
-				top: (wHeight/2-150) + 'px',
-				left: (wWidth/2-225) + 'px'
+				top: ((wHeight/2)-150) + 'px',
+				left: ((wWidth/2)-225) + 'px'
 			});
 
 			$('.closebox').css({
-				top: (wHeight/2-140) + 'px',
-				left: (wWidth/2+245) + 'px'
+				top: ((wHeight/2)-140) + 'px',
+				left: ((wWidth/2)+245) + 'px'
 			});
 
 		});
