@@ -77,15 +77,12 @@
 			});
 
 			// Define wWidth and wHeight
-			function getWindowAttrib(){
-				wWidth = $(window).width();
-				wHeight = $(window).height();
-			}
-			getWindowAttrib();				
+			wWidth = $(window).width();
+			wHeight = $(window).height();
 
 		});
 
-		addEvent(window, 'scroll', function() {
+		addEvent(window, 'resize', function() {
 			// Define wWidth and wHeight on scroll
 			wWidth = $(window).width();
 			wHeight = $(window).height();
@@ -143,7 +140,6 @@
 		
 		addEvent(window, 'resize', function() {
 			// Update width and height of overlay on resize
-			getWindowAttrib();
 			$('.overlay').css({
 				width: wWidth + 'px',
 				height: wHeight + 'px'
@@ -151,13 +147,13 @@
 
 			// Update top and left position of form on resize
 			$('.signup-form').css({
-				top: ((wHeight/2)-150) + 'px',
-				left: ((wWidth/2)-225) + 'px'
+				top: (wHeight/2-150) + 'px',
+				left: (wWidth/2-225) + 'px'
 			});
 
 			$('.closebox').css({
-				top: ((wHeight/2)-140) + 'px',
-				left: ((wWidth/2)+245) + 'px'
+				top: (wHeight/2-140) + 'px',
+				left: (wWidth/2+245) + 'px'
 			});
 
 		});
