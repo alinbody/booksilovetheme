@@ -72,6 +72,7 @@ GLOBAL STYLES
 		margin: 0 0 7px 0;
 		line-height: 1.3em;
 		font-size: 1.1em;
+		text-align: left;
 	}
 
 	.inner-div {
@@ -383,11 +384,11 @@ GLOBAL STYLES
 		margin: 10px 0 20px 0;
 	}
 
-	.required {
+	label.required {
 		color: #AAAAAA;
 	}
 
-	.required:after {
+	label.required:after {
 		content: "*";
 	}
 
@@ -679,5 +680,19 @@ GLOBAL STYLES
 		.bil-footer .logo {
 			width: 85%;
 		}
+
+		.bil-footer {
+			font-size: .85em;
+		}
+
+		/* Sign Up Form */
+		#webform-client-form-15 #edit-submitted-email {
+			width: 80%;
+		}
+
+		#webform-client-form-15, .webform-confirmation {
+			width: auto;
+			padding: 0;
+		}		
 
 	}
