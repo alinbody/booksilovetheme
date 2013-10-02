@@ -88,6 +88,19 @@
 			wHeight = $(window).height();
 		});
 
+		// When menu button is clicked, slide down/up mobile menu
+		// Then, add class "mobile-menu" to UL to distinguish it from desktop site
+		$('.mobile-menu img').click( function() {
+			$('ul.menu').slideToggle('slow').addClass('mobile-menu');
+		});
+
+		// When menu item is tapped, hide menu
+		// Then, remove "mobile-menu" class
+		$('ul.menu li a').click( function() {
+			$('ul.mobile-menu').hide().removeClass('mobile-menu');
+		});
+
+
 		// When signup button is clicked, pop up overlay form.
 		$('.signup-button').click( function() {
 			booksILove.signUpPopup();
