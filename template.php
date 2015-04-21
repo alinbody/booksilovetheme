@@ -4,6 +4,26 @@
 */
 
 /*
+  Update all the preprocess magic to fix 404 error page handling
+*/
+function booksilovetheme_preprocess(&$vars, $hook) {
+    //custom 403/404
+    $headers = drupal_get_http_header();
+    if(theme_get_setting('mothership_404') AND isset($headers['status']) ){
+      if($headers['status'] == '404 Not Found'){
+        $vars['theme_hook_suggestions'][] = 'html__404';
+      }
+    }
+    //custom 404/404
+    $headers = drupal_get_http_header();
+    if (isset($headers['status'])) {
+      if($headers['status'] == '404 Not Found'){
+        unset($vars['theme_hook_suggestions']);
+      }
+    }
+}
+
+/*
 function NEWTHEME_preprocess_html(&$vars) {
   //  kpr($vars['content']);
 }
