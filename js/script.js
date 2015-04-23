@@ -23,7 +23,7 @@
 		addEvent(window, 'load', function() {
 			
 			// Stop front page nav from doign anything with clicked
-			$('.front nav li a').click( function(event) {
+			$('.front nav li a.prevent-event').click( function(event) {
 				event.preventDefault();
 			});
 
